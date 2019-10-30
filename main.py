@@ -37,4 +37,18 @@ for word in tokenized_words_without_stopwords_and_stemmed:
         frequency_table[word] += 1
     else:
         frequency_table[word] = 1
-print (frequency_table)
+
+sentence_score = {}
+for sentence in tokenized_to_sentence:
+    word_count_in_sentence_without_stopwords = 0
+    for wordValue in frequency_table:
+        if wordValue in sentence.lower():
+            word_count_in_sentence_without_stopwords += 1
+            if sentence in sentence_score:
+                sentence_score[sentence] += frequency_table[wordValue]
+            else:
+                sentence_score[sentence] = frequency_table[wordValue]
+    if sentence in sentence_score:
+        sentence_score[sentence] = sentence_score[sentence] / word_count_in_sentence_without_stopwords
+for sentence in sentence_score:
+    print (sentence, " : ", round(sentence_score[sentence], 3))
