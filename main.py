@@ -51,4 +51,17 @@ for sentence in tokenized_to_sentence:
     if sentence in sentence_score:
         sentence_score[sentence] = sentence_score[sentence] / word_count_in_sentence_without_stopwords
 for sentence in sentence_score:
-    print (sentence, " : ", round(sentence_score[sentence], 3))
+    print(sentence, " : ", round(sentence_score[sentence], 3))
+
+# özet oranlarının hesaplanması
+total_length_of_words = 0
+for sentence in sentence_score:
+    total_length_of_words += len(regex_tokenizer.tokenize(''.join(sentence)))
+print("Total length of words in text: ", total_length_of_words)
+
+length_of_twenty_five_percentage_text = round(total_length_of_words/4)
+length_of_forty_percentage_text = round((total_length_of_words / 5) * 2)
+length_of_sixty_percentage_text = round((total_length_of_words / 5) * 3)
+print("Word count of %25 Summary: ", length_of_twenty_five_percentage_text)
+print("Word count of %40 Summary: ", length_of_forty_percentage_text)
+print("Word count of %60 Summary: ", length_of_sixty_percentage_text)
