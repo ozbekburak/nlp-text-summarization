@@ -29,3 +29,12 @@ stemmer = PorterStemmer()
 tokenized_words_without_stopwords_and_stemmed = []
 for word in tokenized_words_without_stopwords:
     tokenized_words_without_stopwords_and_stemmed.append(stemmer.stem(word))
+
+# kelime sıklıklarını dictionary'de toplayalım.
+frequency_table = {}
+for word in tokenized_words_without_stopwords_and_stemmed:
+    if word in frequency_table:
+        frequency_table[word] += 1
+    else:
+        frequency_table[word] = 1
+print (frequency_table)
