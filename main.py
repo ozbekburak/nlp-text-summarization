@@ -65,3 +65,19 @@ length_of_sixty_percentage_text = round((total_length_of_words / 5) * 3)
 print("Word count of %25 Summary: ", length_of_twenty_five_percentage_text)
 print("Word count of %40 Summary: ", length_of_forty_percentage_text)
 print("Word count of %60 Summary: ", length_of_sixty_percentage_text)
+
+# Cumleleri puanlarina gore yuksekten dusuge sıralayalim.
+sorted_sentences = sorted(sentence_score, key=sentence_score.get, reverse=True)
+for sentence in sorted_sentences:
+    print(sentence, sentence_score[sentence], " uzunluk: ", len(regex_tokenizer.tokenize(''.join(sentence))))
+
+# %25 özetin üretilmesi
+generate_25_summary = ''
+length_25_summary = 0
+for sentence in sorted_sentences:
+    while (length_25_summary) < length_of_twenty_five_percentage_text:
+        generate_25_summary += " " + sentence
+        length_25_summary += len(regex_tokenizer.tokenize(''.join(sentence)))
+        break
+print(generate_25_summary)
+print(length_25_summary)
