@@ -16,3 +16,11 @@ tokenized_to_sentence = tokenizer.tokenize(text)
 # Kelime kelime bolmek icin on hazirlik
 regex_tokenizer = RegexpTokenizer("[\w']+")
 tokenized_to_word = regex_tokenizer.tokenize(''.join(tokenized_to_sentence))
+
+# stopwordsleri ayristiralim
+english_stops = set(stopwords.words('english'))
+tokenized_words_without_stopwords = []
+for word in tokenized_to_word:
+    if word not in english_stops:
+        tokenized_words_without_stopwords.append(word)
+
