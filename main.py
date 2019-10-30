@@ -24,3 +24,8 @@ for word in tokenized_to_word:
     if word not in english_stops:
         tokenized_words_without_stopwords.append(word)
 
+# stemming isleminin uygulanmasi (kelimelerin kokleri alinmasi
+stemmer = PorterStemmer()
+tokenized_words_without_stopwords_and_stemmed = []
+for word in tokenized_words_without_stopwords:
+    tokenized_words_without_stopwords_and_stemmed.append(stemmer.stem(word))
