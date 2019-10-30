@@ -80,4 +80,23 @@ for sentence in sorted_sentences:
         length_25_summary += len(regex_tokenizer.tokenize(''.join(sentence)))
         break
 print(generate_25_summary)
-print(length_25_summary)
+
+# %40 ozetin üretilmesi
+generate_40_summary = ''
+length_40_summary = 0
+for sentence in sorted_sentences:
+    while (length_40_summary) < length_of_forty_percentage_text:
+        generate_40_summary += " " + sentence
+        length_40_summary += len(regex_tokenizer.tokenize(''.join(sentence)))
+        break
+print(generate_40_summary)
+
+# %60 ozetin üretilmesi
+generate_60_summary = ''
+length_60_summary = 0
+for sentence in sorted_sentences:
+    while (length_60_summary) < length_of_sixty_percentage_text:
+        generate_60_summary += " " + sentence
+        length_60_summary += len(regex_tokenizer.tokenize(''.join(sentence)))
+        break
+print(generate_60_summary)
