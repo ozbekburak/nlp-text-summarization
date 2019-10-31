@@ -2,11 +2,12 @@ import nltk
 from nltk.tokenize import RegexpTokenizer
 from nltk.corpus import stopwords
 from nltk.stem import PorterStemmer
+import codecs
+# nltk.download('punkt')
+# nltk.download('stopwords')
 
-#nltk.download('punkt')
-#nltk.download('stopwords')
-
-with open('/home/gregorsamsa/Masters Degree/Natural Language Processing/nlp-text-summarizer/NewsAll_Turkey-Syria.txt') as newsfile:
+with open(
+        '/home/gregorsamsa/Masters Degree/Natural Language Processing/nlp-text-summarizer/NewsAll_Turkey-Syria.txt') as newsfile:
     text = newsfile.read()
 
 # Metini cumlelee boluyoruz.
@@ -59,7 +60,7 @@ for sentence in sentence_score:
     total_length_of_words += len(regex_tokenizer.tokenize(''.join(sentence)))
 print("Total length of words in text: ", total_length_of_words)
 
-length_of_twenty_five_percentage_text = round(total_length_of_words/4)
+length_of_twenty_five_percentage_text = round(total_length_of_words / 4)
 length_of_forty_percentage_text = round((total_length_of_words / 5) * 2)
 length_of_sixty_percentage_text = round((total_length_of_words / 5) * 3)
 print("Word count of %25 Summary: ", length_of_twenty_five_percentage_text)
@@ -75,28 +76,70 @@ for sentence in sorted_sentences:
 generate_25_summary = ''
 length_25_summary = 0
 for sentence in sorted_sentences:
-    while (length_25_summary) < length_of_twenty_five_percentage_text:
+    while length_25_summary < length_of_twenty_five_percentage_text:
         generate_25_summary += " " + sentence
         length_25_summary += len(regex_tokenizer.tokenize(''.join(sentence)))
         break
-print(generate_25_summary)
 
 # %40 ozetin üretilmesi
 generate_40_summary = ''
 length_40_summary = 0
 for sentence in sorted_sentences:
-    while (length_40_summary) < length_of_forty_percentage_text:
+    while length_40_summary < length_of_forty_percentage_text:
         generate_40_summary += " " + sentence
         length_40_summary += len(regex_tokenizer.tokenize(''.join(sentence)))
         break
-print(generate_40_summary)
 
 # %60 ozetin üretilmesi
 generate_60_summary = ''
 length_60_summary = 0
 for sentence in sorted_sentences:
-    while (length_60_summary) < length_of_sixty_percentage_text:
+    while length_60_summary < length_of_sixty_percentage_text:
         generate_60_summary += " " + sentence
         length_60_summary += len(regex_tokenizer.tokenize(''.join(sentence)))
         break
-print(generate_60_summary)
+
+
+with codecs.open('Group1_Summaries_25/Group1_Summary_25_1.txt', 'r', encoding='utf-8', errors='ignore') as group1_summary_25_1:
+    group1_summary_25_1_text = group1_summary_25_1.read()
+with codecs.open('Group1_Summaries_25/Group1_Summary_25_2.txt', 'r', encoding='utf-8', errors='ignore') as group1_summary_25_2:
+    group1_summary_25_2_text = group1_summary_25_2.read()
+with codecs.open('Group1_Summaries_25/Group1_Summary_25_3.txt', 'r', encoding='utf-8', errors='ignore') as group1_summary_25_3:
+    group1_summary_25_3_text = group1_summary_25_3.read()
+with codecs.open('Group1_Summaries_25/Group1_Summary_25_4.txt', 'r', encoding='utf-8', errors='ignore') as group1_summary_25_4:
+    group1_summary_25_4_text = group1_summary_25_4.read()
+with codecs.open('Group1_Summaries_25/Group1_Summary_25_5.txt', 'r', encoding='utf-8', errors='ignore') as group1_summary_25_5:
+    group1_summary_25_5_text = group1_summary_25_5.read()
+
+from sklearn.feature_extraction.text import TfidfVectorizer
+
+vectorizer = TfidfVectorizer()
+
+
+def cosine_sim(text1, text2):
+    tfidf = vectorizer.fit_transform([text1, text2])
+    return (tfidf * tfidf.T).A[0, 1]
+
+
+print("---MAKİNE ÖZETLERİ---")
+
+print("Machine summary (%25): ", generate_25_summary)
+print("Machine summary (%40): ", generate_40_summary)
+print("Machine summary (%60): ", generate_60_summary)
+
+print("---KİŞİ ÖZETLERİ---")
+
+print("1.kisi summary (%25): ", group1_summary_25_1_text)
+print("2.kisi summary (%25): ", group1_summary_25_2_text)
+print("3.kisi summary (%25): ", group1_summary_25_3_text)
+print("4.kisi summary (%25): ", group1_summary_25_4_text)
+print("5.kisi summary (%25): ", group1_summary_25_5_text)
+
+print("---BENZERLİK ORANLARI (%25)---")
+
+print("Group1_Summary_25_1 benzerlik oranı: ", cosine_sim(generate_25_summary, group1_summary_25_1_text))
+print("Group1_Summary_25_1 benzerlik oranı: ", cosine_sim(generate_25_summary, group1_summary_25_2_text))
+print("Group1_Summary_25_3 benzerlik oranı: ", cosine_sim(generate_25_summary, group1_summary_25_3_text))
+print("Group1_Summary_25_4 benzerlik oranı: ", cosine_sim(generate_25_summary, group1_summary_25_4_text))
+print("Group1_Summary_25_5 benzerlik oranı: ", cosine_sim(generate_25_summary, group1_summary_25_5_text))
+
