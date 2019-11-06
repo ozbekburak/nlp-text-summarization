@@ -224,3 +224,19 @@ def read_human_summaries_60():
 
     return group1_summary_60_1_text, group1_summary_60_2_text, group1_summary_60_3_text, group1_summary_60_4_text, group1_summary_60_5_text
 
+
+"""
+    Comparison of machine summary and human summary.
+    
+    To do that, we use cosine similarity.
+    
+    References: 
+    https://www.machinelearningplus.com/nlp/cosine-similarity/ http://blog.christianperone.com/2013/09/machine-learning-cosine-similarity-for-vector-space-models-part-iii/
+    https://scikit-learn.org/stable/modules/generated/sklearn.feature_extraction.text.TfidfVectorizer.html    
+"""
+
+
+def calculate_similarity_between_documents(machine_summary, human_summary):
+    vectorizer = TfidfVectorizer(stop_words='english', lowercase=True)
+    tfidf = vectorizer.fit_transform([machine_summary, human_summary])
+    return cosine_similarity(tfidf)
