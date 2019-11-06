@@ -132,3 +132,35 @@ def calculate_summary_length_60(sentence_score):
 def order_sentences(sentence_score):
     sorted_sentences = sorted(sentence_score, key=sentence_score.get, reverse=True)
     return sorted_sentences
+
+
+def generate_summaries(sorted_sentences, length_of_twenty_five_percentage_text, length_of_forty_percentage_text,
+                       length_of_sixty_percentage_text):
+    # generate summary (%25)
+    generate_25_summary = ''
+    length_25_summary = 0
+    for sentence in sorted_sentences:
+        while length_25_summary < length_of_twenty_five_percentage_text:
+            generate_25_summary += " " + sentence
+            length_25_summary += len(regex_tokenizer.tokenize(''.join(sentence)))
+            break
+
+    # generate summary (%40)
+    generate_40_summary = ''
+    length_40_summary = 0
+    for sentence in sorted_sentences:
+        while length_40_summary < length_of_forty_percentage_text:
+            generate_40_summary += " " + sentence
+            length_40_summary += len(regex_tokenizer.tokenize(''.join(sentence)))
+            break
+
+    # generate summary (%60)
+    generate_60_summary = ''
+    length_60_summary = 0
+    for sentence in sorted_sentences:
+        while length_60_summary < length_of_sixty_percentage_text:
+            generate_60_summary += " " + sentence
+            length_60_summary += len(regex_tokenizer.tokenize(''.join(sentence)))
+            break
+    return generate_25_summary, generate_40_summary, generate_60_summary
+
