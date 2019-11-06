@@ -240,3 +240,31 @@ def calculate_similarity_between_documents(machine_summary, human_summary):
     vectorizer = TfidfVectorizer(stop_words='english', lowercase=True)
     tfidf = vectorizer.fit_transform([machine_summary, human_summary])
     return cosine_similarity(tfidf)
+
+
+pre_processed_text = pre_processing(document)
+
+word_occurrence_table = create_word_occurrence_table(pre_processed_text)
+
+calculated_sentence_score = calculate_sentence_score(word_occurrence_table)
+
+calculated_summary_length_25 = calculate_summary_length_25(calculated_sentence_score)
+
+calculated_summary_length_40 = calculate_summary_length_40(calculated_sentence_score)
+
+calculated_summary_length_60 = calculate_summary_length_60(calculated_sentence_score)
+
+ordered_sentences = order_sentences(calculated_sentence_score)
+
+
+"""
+    generated_summaries consist of 3 summaries (%25) (%40) (%60). 
+    
+    generated_summaries[0] : %25 Summary
+    generated_summaries[1] : %40 Summary
+    generated_summaries[2] : %60 Summary
+"""
+
+
+generated_summaries = generate_summaries(ordered_sentences, calculated_summary_length_25, calculated_summary_length_40, calculated_summary_length_60)
+
