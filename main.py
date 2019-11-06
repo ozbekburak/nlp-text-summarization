@@ -164,3 +164,63 @@ def generate_summaries(sorted_sentences, length_of_twenty_five_percentage_text, 
             break
     return generate_25_summary, generate_40_summary, generate_60_summary
 
+
+def read_human_summaries_25():
+    with codecs.open('Summaries/Group1/Group1_Summaries_25/Group1_Summary_25_1.txt', 'r', encoding='utf-8',
+                     errors='ignore') as group1_summary_25_1:
+        group1_summary_25_1_text = group1_summary_25_1.read()
+    with codecs.open('Summaries/Group1/Group1_Summaries_25/Group1_Summary_25_2.txt', 'r', encoding='utf-8',
+                     errors='ignore') as group1_summary_25_2:
+        group1_summary_25_2_text = group1_summary_25_2.read()
+    with codecs.open('Summaries/Group1/Group1_Summaries_25/Group1_Summary_25_3.txt', 'r', encoding='utf-8',
+                     errors='ignore') as group1_summary_25_3:
+        group1_summary_25_3_text = group1_summary_25_3.read()
+    with codecs.open('Summaries/Group1/Group1_Summaries_25/Group1_Summary_25_4.txt', 'r', encoding='utf-8',
+                     errors='ignore') as group1_summary_25_4:
+        group1_summary_25_4_text = group1_summary_25_4.read()
+    with codecs.open('Summaries/Group1/Group1_Summaries_25/Group1_Summary_25_5.txt', 'r', encoding='utf-8',
+                     errors='ignore') as group1_summary_25_5:
+        group1_summary_25_5_text = group1_summary_25_5.read()
+
+    return group1_summary_25_1_text, group1_summary_25_2_text, group1_summary_25_3_text, group1_summary_25_4_text, group1_summary_25_5_text
+
+
+def read_human_summaries_40():
+    with codecs.open('Summaries/Group1/Group1_Summaries_40/Group1_Summary_40_1.txt', 'r', encoding='utf-8',
+                     errors='ignore') as group1_summary_40_1:
+        group1_summary_40_1_text = group1_summary_40_1.read()
+    with codecs.open('Summaries/Group1/Group1_Summaries_40/Group1_Summary_40_2.txt', 'r', encoding='utf-8',
+                     errors='ignore') as group1_summary_40_2:
+        group1_summary_40_2_text = group1_summary_40_2.read()
+    with codecs.open('Summaries/Group1/Group1_Summaries_40/Group1_Summary_40_3.txt', 'r', encoding='utf-8',
+                     errors='ignore') as group1_summary_40_3:
+        group1_summary_40_3_text = group1_summary_40_3.read()
+    with codecs.open('Summaries/Group1/Group1_Summaries_40/Group1_Summary_40_4.txt', 'r', encoding='utf-8',
+                     errors='ignore') as group1_summary_40_4:
+        group1_summary_40_4_text = group1_summary_40_4.read()
+    with codecs.open('Summaries/Group1/Group1_Summaries_40/Group1_Summary_40_5.txt', 'r', encoding='utf-8',
+                     errors='ignore') as group1_summary_40_5:
+        group1_summary_40_5_text = group1_summary_40_5.read()
+
+    return group1_summary_40_1_text, group1_summary_40_2_text, group1_summary_40_3_text, group1_summary_40_4_text, group1_summary_40_5_text
+
+
+def read_human_summaries_60():
+    with codecs.open('Summaries/Group1/Group1_Summaries_60/Group1_Summary_60_1.txt', 'r', encoding='utf-8',
+                     errors='ignore') as group1_summary_60_1:
+        group1_summary_60_1_text = group1_summary_60_1.read()
+    with codecs.open('Summaries/Group1/Group1_Summaries_60/Group1_Summary_60_2.txt', 'r', encoding='utf-8',
+                     errors='ignore') as group1_summary_60_2:
+        group1_summary_60_2_text = group1_summary_60_2.read()
+    with codecs.open('Summaries/Group1/Group1_Summaries_60/Group1_Summary_60_3.txt', 'r', encoding='utf-8',
+                     errors='ignore') as group1_summary_60_3:
+        group1_summary_60_3_text = group1_summary_60_3.read()
+    with codecs.open('Summaries/Group1/Group1_Summaries_60/Group1_Summary_60_4.txt', 'r', encoding='utf-8',
+                     errors='ignore') as group1_summary_60_4:
+        group1_summary_60_4_text = group1_summary_60_4.read()
+    with codecs.open('Summaries/Group1/Group1_Summaries_60/Group1_Summary_60_5.txt', 'r', encoding='utf-8',
+                     errors='ignore') as group1_summary_60_5:
+        group1_summary_60_5_text = group1_summary_60_5.read()
+
+    return group1_summary_60_1_text, group1_summary_60_2_text, group1_summary_60_3_text, group1_summary_60_4_text, group1_summary_60_5_text
+
