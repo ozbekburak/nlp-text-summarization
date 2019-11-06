@@ -120,3 +120,15 @@ def calculate_summary_length_60(sentence_score):
 
     length_of_sixty_percentage_text = round((total_length_of_words / 3) * 3)
     return length_of_sixty_percentage_text
+
+
+"""
+    Ordering sentences.
+    
+    After scoring the sentences, sort them in descending order. high score, first priority.
+"""
+
+
+def order_sentences(sentence_score):
+    sorted_sentences = sorted(sentence_score, key=sentence_score.get, reverse=True)
+    return sorted_sentences
