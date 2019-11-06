@@ -58,3 +58,28 @@ def create_word_occurrence_table(tokenized_words_without_stopwords_and_stemmed):
             number_of_occurrences[word] = 1
     return number_of_occurrences
 
+
+""" 
+    Calculating sentence score.
+    
+    After creating word_occurrence_table, stopwords does not consider when assign score to sentences. 
+"""
+
+
+def calculate_sentence_score(number_of_occurrences):
+    sentence_score = {}
+    for sentence in tokenized_to_sentence:
+        word_count_in_sentence_without_stopwords = 0
+        for word_value in number_of_occurrences:
+            if word_value in sentence.lower():  # handling case sensitivity
+                word_count_in_sentence_without_stopwords += 1
+                if sentence in sentence_score:
+                    sentence_score[sentence] += number_of_occurrences[word_value]
+                else:
+                    sentence_score[sentence] = number_of_occurrences[word_value]
+        if sentence in sentence_score:
+            sentence_score[sentence] = sentence_score[sentence] / word_count_in_sentence_without_stopwords
+    for sentence in sentence_score:
+        print(sentence, " : ", round(sentence_score[sentence], 3))
+
+    return sentence_score
