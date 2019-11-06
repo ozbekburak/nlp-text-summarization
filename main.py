@@ -49,3 +49,12 @@ def pre_processing(text):
     return tokenized_words_without_stopwords_and_stemmed
 
 
+def create_word_occurrence_table(tokenized_words_without_stopwords_and_stemmed):
+    number_of_occurrences = {}
+    for word in tokenized_words_without_stopwords_and_stemmed:
+        if word in number_of_occurrences:
+            number_of_occurrences[word] += 1
+        else:
+            number_of_occurrences[word] = 1
+    return number_of_occurrences
+
