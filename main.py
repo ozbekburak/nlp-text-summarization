@@ -83,3 +83,40 @@ def calculate_sentence_score(number_of_occurrences):
         print(sentence, " : ", round(sentence_score[sentence], 3))
 
     return sentence_score
+
+
+"""
+    Calculation of summary lengths.
+    
+    We need to do this for comparing machine summary and human summary in different size of text.
+"""
+
+
+def calculate_summary_length_25(sentence_score):
+    total_length_of_words = 0
+    for sentence in sentence_score:
+        total_length_of_words += len(regex_tokenizer.tokenize(''.join(sentence)))
+    print("Total length of words in text: ", total_length_of_words)
+
+    length_of_twenty_five_percentage_text = round(total_length_of_words / 4)
+    return length_of_twenty_five_percentage_text
+
+
+def calculate_summary_length_40(sentence_score):
+    total_length_of_words = 0
+    for sentence in sentence_score:
+        total_length_of_words += len(regex_tokenizer.tokenize(''.join(sentence)))
+    print("Total length of words in text: ", total_length_of_words)
+
+    length_of_forty_percentage_text = round((total_length_of_words / 5) * 2)
+    return length_of_forty_percentage_text
+
+
+def calculate_summary_length_60(sentence_score):
+    total_length_of_words = 0
+    for sentence in sentence_score:
+        total_length_of_words += len(regex_tokenizer.tokenize(''.join(sentence)))
+    print("Total length of words in text: ", total_length_of_words)
+
+    length_of_sixty_percentage_text = round((total_length_of_words / 3) * 3)
+    return length_of_sixty_percentage_text
