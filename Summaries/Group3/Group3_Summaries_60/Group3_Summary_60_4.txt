@@ -1,0 +1,49 @@
+Smart cities: This city runs on its own operating system
+Sensors distributed across the city will allow the collection of real-time data to improve services, says the council. 
+Using Internet of Things (IoT) sensors distributed around the city to provide data in real-time data, Hull City Council says it will be able to better control street lighting, refuse collection, parking and traffic congestion, with the goal of providing better services at a reduced cost. 
+The council is working with a local telecoms service provider, Connexin, which built on Cisco's Kinetic for Cities platform - a subscription-based software that lets city operators view and manage data from multiple sensors, and from a single panel. 
+The platform, called CityOS, pulls together and aggregates information from a range of different IoT sensors, before passing it on to city operators. 
+This means the data is easier to visualise, and can then be used to better manage resources.  
+This is the idea behind a 'programmable city'." 
+Sensors installed inside the bins monitor waste levels, and the data is used to determine optimal times for waste collection or more efficient collection routes.  
+"It's nice to see the UK innovating ahead of Silicon Valley here."
+Singapore is world's smartest city: IMD Smart City Index
+SINGAPORE - The smartest city in the world is Singapore, the inaugural IMD Smart City Index showed. 
+Published by Swiss business school IMD and the Singapore University of Technology and Design, the index ranked cities in terms of how "smart" they are, which in this case was defined as an urban setting that applies technology to enhance the benefits and diminish the shortcomings of urbanisation. 
+The survey's findings were derived from the perceptions of the city's citizens, with 120 residents from each city polled on their ideas of two pillars: structures, which refers to the city's existing infrastructure; and technology, which refers to the technological provisions and services available to the residents. 
+Singapore performed well across the board, including for the indicators of public safety, lifelong learning opportunities provided by local institutions, having green spaces, as well as having online access to job listings. 
+Singapore is only one of two Asian cities to be in the Top 10 of 102 cities. 
+Mr Christos Cabolis, chief economist at IMD Business School's Competitiveness Centre, told The Straits Times: "Singapore topped the ranking because, according to its citizens, it is performing superbly in providing high quality infrastructure in the areas we study, while at the same time adopting technologies in an efficient way to make the lives of the Singaporeans better." 
+The index also surveyed residents on the areas that they perceive to be of priority and as the most urgent for the city. 
+For Singapore, the issues of affordable housing, fulfilling employment, unemployment and public transport came out as the highest priority areas. Mr Ng Chee Khern, Permanent Secretary (Smart Nation & Digital Government), said that the index is useful for policymakers to direct their work to what would most benefit citizens and businesses. 
+Why the Future of Smart Cities Comes Down to Data
+While sensors, radars and cameras may be what people think when they envision the smart cities of the future, data will be what make improvement to community life tangible. 
+The insight gathered by new hardware and software around cities and rural areas will only be as good as how it is acted upon. 
+Collaboration between neighboring towns and governments is critical to this distribution, and challenges still exist on that front, but creating data standards could lead to more collaboration. 
+The spread of data from one municipality to another acts as the language that will communicate actionable information in real time, something that has not previously been available. 
+It will be up to each community to decide how it wants to best utilize this new wealth of information.
+Huaweis Push For 5G At The IMC 2019 With 5G Airports, AI-Powered Safe Cities And More
+Huaweis Intelligent Operation Center (IOC)  a solution for smart cities in India  collects data from all the different subsystems of a city.
+It also allows urban managers to gauge real-time resource management and keep an eye on the level of resources available in a city. 
+In case of an emergency, it also allows for integration between service types  like call centers, GIS map, command centers as well as video and voice calling.
+Huawei also has its Intelligent City Surveillance solutions on display. 
+Using a combination of artificial intelligence (AI) enabled cameras, the system can cover specific areas which may be vulnerable. 
+It can track for intrusions, spot an abandoned object, identify when theres theft is in progress, and look out for suspicious movement. 
+5G airports could be a boon or a bane but either way, the technology is available and on display at IMC 2019. 
+Using Huaweis 5G network and AI solution, airports will be able to manage passenger flow and flight flow scenarios to optimise travel operations. 
+Smart airport solutions will collect the required data using facial recognition technology allowing for self-service check-in, hierarchical security check, smart navigation, last call, in-flight passenger management, paperless luggage service and more. 
+It can support over 200 concurrent connections while maintaining high throughput  which means more bandwidth per user.
+Huaweis Cloudlink Board allows for smart classrooms to allow for interactive but remote teaching. 
+Using a combination of 5G, Internet of Things (IoT), Big Data and AI, Huaweis remote classroom solution can also analyse student behaviour and share educational resources. 
+It aggregates the data, cleans it up and analyses the results. 
+The results display the overall status of the city and also gives advice on decision making.
+Infrastructures and networks that boost smart cities
+As a founding member of the Smart City Observatory at Bocconi University, Enel Foundation contributed to the event Infrastructures and networks for Smart Cities: what operational efficiency and social value impacts.
+The event took place on 15 October in Milan and was organised with support from Bocconis GREEN (Centre for Research in Geography, Resources, Environment, Energy and Networks), established to conduct and promote multidisciplinary research oriented towards addressing policy-relevant issues at local and global scale.  
+During the meeting, several presentations outlined how energy, water and waste management in urban areas increasingly rely on the use of smart infrastructures and smart grids. 
+Moreover, smart accounting and pricing systems provide data of significant competitive value to operators, while at the same time allowing users to have information on their consumption, with positive effects on their behaviour. 
+The event featured a keynote speech by Matteo Codazzi, CEO of CESI, a leading consultancy firm in the field and a research partner of Enel Foundation in different projects, as well and a roundtable with the participation of Andrea Caregari head of operations and maintenance at e-distribuzione, the Enel Group company managing electricity distribution grids in Italy. 
+Professors Giuseppe Franco Ferrari and Edoardo Croci, coordinators of the Smart City Observatory, concluded the event by remarking, the Smart City observatory established by Bocconi University offers key institutional and industrial players the opportunity to analyse and debate key topics regarding the economic and regulatory dynamics of smart cities. 
+
+
+

@@ -1,0 +1,30 @@
+Sensors distributed across the city will allow the collection of real-time data to improve services, says the council. 
+The platform, called CityOS, pulls together and aggregates information from a range of different IoT sensors, before passing it on to city operators. 
+Published by Swiss business school IMD and the Singapore University of Technology and Design, the index ranked cities in terms of how "smart" they are, which in this case was defined as an urban setting that applies technology to enhance the benefits and diminish the shortcomings of urbanisation. 
+ Mr Ng Chee Khern, Permanent Secretary (Smart Nation & Digital Government), said that the index is useful for policymakers to direct their work to what would most benefit citizens and businesses
+Huawei’s Intelligent Operation Center (IOC) — a solution for smart cities in India — collects data from all the different subsystems of a city. 
+It aggregates the data, cleans it up and analyses the results. 
+The results display the overall status of the city and also gives advice on decision making. 
+It also allows urban managers to gauge real-time resource management and keep an eye on the level of resources available in a city.
+ In case of an emergency, it also allows for integration between service types — like call centers, GIS map, command centers as well as video and voice calling.
+Huawei also has its Intelligent City Surveillance solutions on display.
+ While sensors, radars and cameras may be what people think when they envision the smart cities of the future, data will be what make improvement to community life tangible.
+The insight gathered by new hardware and software around cities and rural areas will only be as good as how it is acted upon. 
+ Sarah Glova, Director of Growth and Communications at NC RIoT, recently participated in a prescient session at Smart Cities Connect in National Harbor, Maryland titled If Data is the New Oil, How do We Explore, Extract and Distribute Its Value? Collaboration between neighboring towns and governments is critical to this distribution, and challenges still exist on that front, but creating data standards could lead to more collaboration.
+ NC RIoT is a North Carolina-based non-profit that brings IoT companies, academics, governments and businesses together to advance connectivity in cities and rural areas alike.
+The spread of data from one municipality to another acts as the language that will communicate actionable information in real time, something that has not previously been available. 
+ It will be up to each community to decide how it wants to best utilize this new wealth of information.
+
+Using a combination of artificial intelligence (AI) enabled cameras, the system can cover specific areas which may be vulnerable. It can track for intrusions, spot an abandoned object, identify when there’s theft is in progress, and look out for suspicious movement. 
+ 5G airports could be a boon or a bane but either way, the technology is available and on display at IMC 2019. 
+
+ Using Huawei’s 5G network and AI solution, airports will be able to manage passenger flow and flight flow scenarios to optimise travel operations. 
+Smart airport solutions will collect the required data using facial recognition technology allowing for self-service check-in, hierarchical security check, smart navigation, last call, in-flight passenger management, paperless luggage service and more. 
+These services will run on Huawei’s indoor 5G technology that the company has dubbed ‘Wi-Fi 6’. It can support over 200 concurrent connections while maintaining high throughput — which means more bandwidth per user. 
+Huawei believes the Wi-Fi 6 solution can also be applied to virtual reality (VR), 4K video content streaming, self-driving cars, and any high-intensity outdoor venues — like a cricket match or a conference
+Huawei’s Cloudlink Board allows for smart classrooms to allow for interactive but remote teaching.
+Using a combination of 5G, Internet of Things (IoT), Big Data and AI, Huawei’s remote classroom solution can also analyse student behaviour and share educational resources. 
+The interventions also underlined that new technologies allow efficient management and monitoring of services, with significant benefits for utilities and a reduction in operational costs. 
+ Moreover, smart accounting and pricing systems provide data of significant competitive value to operators, while at the same time allowing users to have information on their consumption, with positive effects on their behaviour. 
+ Professors Giuseppe Franco Ferrari and Edoardo Croci, coordinators of the Smart City Observatory, concluded the event by remarking, “the Smart City observatory established by Bocconi University offers key institutional and industrial players the opportunity to analyse and debate key topics regarding the economic and regulatory dynamics of smart cities.” 
+In addition, they underlined, “utility led innovation in the management of infrastructures and networks is a prominent area of advancement in urban sustainability.

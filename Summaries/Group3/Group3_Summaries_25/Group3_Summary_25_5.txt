@@ -1,0 +1,16 @@
+Sensors distributed across the city will allow the collection of real-time data to improve services, says the council. 
+The platform, called CityOS, pulls together and aggregates information from a range of different IoT sensors, before passing it on to city operators. 
+Published by Swiss business school IMD and the Singapore University of Technology and Design, the index ranked cities in terms of how "smart" they are, which in this case was defined as an urban setting that applies technology to enhance the benefits and diminish the shortcomings of urbanisation. 
+Mr Ng Chee Khern, Permanent Secretary (Smart Nation & Digital Government), said that the index is useful for policymakers to direct their work to what would most benefit citizens and businesses
+Huawei’s Intelligent Operation Center (IOC) — a solution for smart cities in India — collects data from all the different subsystems of a city. 
+It aggregates the data, cleans it up and analyses the results. 
+Huawei also has its Intelligent City Surveillance solutions on display.
+While sensors, radars and cameras may be what people think when they envision the smart cities of the future, data will be what make improvement to community life tangible.
+The insight gathered by new hardware and software around cities and rural areas will only be as good as how it is acted upon. 
+NC RIoT is a North Carolina-based non-profit that brings IoT companies, academics, governments and businesses together to advance connectivity in cities and rural areas alike.
+ Using a combination of artificial intelligence (AI) enabled cameras, the system can cover specific areas which may be vulnerable. It can track for intrusions, spot an abandoned object, identify when there’s theft is in progress, and look out for suspicious movement. 
+Using Huawei’s 5G network and AI solution, airports will be able to manage passenger flow and flight flow scenarios to optimize travel operations. 
+Smart airport solutions will collect the required data using facial recognition technology allowing for self-service check-in, hierarchical security check, smart navigation, last call, in-flight passenger management, paperless luggage service and more. 
+Huawei’s Cloudlink Board allows for smart classrooms to allow for interactive but remote teaching.
+Using a combination of 5G, Internet of Things (IoT), Big Data and AI, Huawei’s remote classroom solution can also analyses student behavior and share educational resources.
+ Professors Giuseppe Franco Ferrari and Edoardo Croci, coordinators of the Smart City Observatory, concluded the event by remarking, “the Smart City observatory established by Bocconi University offers key institutional and industrial players the opportunity to analyse and debate key topics regarding the economic and regulatory dynamics of smart cities.” 
