@@ -302,3 +302,15 @@ similarity_ratio_second_person_60 = round(calculate_similarity_between_documents
 similarity_ratio_third_person_60 = round(calculate_similarity_between_documents(generated_summaries[1], group1_summaries_60[2]).item(1), 3)
 similarity_ratio_forth_person_60 = round(calculate_similarity_between_documents(generated_summaries[1], group1_summaries_60[3]).item(1), 3)
 similarity_ratio_fifth_person_60 = round(calculate_similarity_between_documents(generated_summaries[1], group1_summaries_60[4]).item(1), 3)
+
+
+data_frame_summarization = pd.DataFrame(np.array([[round(similarity_ratio_first_person_25, 3),
+                                                   round(similarity_ratio_second_person_25, 3),
+                                                   round(similarity_ratio_third_person_25, 3),
+                                                   round(similarity_ratio_forth_person_25, 3),
+                                                   round(similarity_ratio_fifth_person_25, 3)]]),
+                                        columns=['Burak Summary', 'Mert Summary', 'Neslihan Summary', 'Nazım Summary', 'Begüm Summary'])
+
+print(data_frame_summarization)
+
+
