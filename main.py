@@ -307,7 +307,17 @@ data_frame_summarization = pd.DataFrame.from_dict({
                       round(similarity_ratio_second_person_25, 3),
                       round(similarity_ratio_third_person_25, 3),
                       round(similarity_ratio_forth_person_25, 3),
-                      round(similarity_ratio_fifth_person_25, 3)]
+                      round(similarity_ratio_fifth_person_25, 3)],
+    'Machine (%40)': [round(similarity_ratio_first_person_40, 3),
+                      round(similarity_ratio_second_person_40, 3),
+                      round(similarity_ratio_third_person_40, 3),
+                      round(similarity_ratio_forth_person_40, 3),
+                      round(similarity_ratio_fifth_person_40, 3)],
+    'Machine (%60)': [round(similarity_ratio_first_person_60, 3),
+                      round(similarity_ratio_second_person_60, 3),
+                      round(similarity_ratio_third_person_60, 3),
+                      round(similarity_ratio_forth_person_60, 3),
+                      round(similarity_ratio_fifth_person_60, 3)]
 }, orient='index', columns=['Human-1', 'Human-2', 'Human-3', 'Human-4', 'Human-5'])
 
 print(data_frame_summarization)
