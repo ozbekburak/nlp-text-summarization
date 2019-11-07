@@ -304,13 +304,13 @@ similarity_ratio_forth_person_60 = round(calculate_similarity_between_documents(
 similarity_ratio_fifth_person_60 = round(calculate_similarity_between_documents(generated_summaries[1], group1_summaries_60[4]).item(1), 3)
 
 
-data_frame_summarization = pd.DataFrame(np.array([[round(similarity_ratio_first_person_25, 3),
-                                                   round(similarity_ratio_second_person_25, 3),
-                                                   round(similarity_ratio_third_person_25, 3),
-                                                   round(similarity_ratio_forth_person_25, 3),
-                                                   round(similarity_ratio_fifth_person_25, 3)]]),
-                                        columns=['Burak Summary', 'Mert Summary', 'Neslihan Summary', 'Nazım Summary', 'Begüm Summary'])
+data_frame_summarization = pd.DataFrame.from_dict({
+    'Machine (%25)': [round(similarity_ratio_first_person_25, 3),
+                      round(similarity_ratio_second_person_25, 3),
+                      round(similarity_ratio_third_person_25, 3),
+                      round(similarity_ratio_forth_person_25, 3),
+                      round(similarity_ratio_fifth_person_25, 3)]
+}, orient='index', columns=['Human-1', 'Human-2', 'Human-3', 'Human-4', 'Human-5'])
 
 print(data_frame_summarization)
-
 
