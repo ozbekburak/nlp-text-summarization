@@ -283,3 +283,22 @@ generated_summaries = generate_summaries(ordered_sentences, calculated_summary_l
 group1_summaries_25 = read_human_summaries_25()
 group1_summaries_40 = read_human_summaries_40()
 group1_summaries_60 = read_human_summaries_60()
+
+
+similarity_ratio_first_person_25 = round(calculate_similarity_between_documents(generated_summaries[0], group1_summaries_25[0]).item(1), 3)
+similarity_ratio_second_person_25 = round(calculate_similarity_between_documents(generated_summaries[0], group1_summaries_25[1]).item(1), 3)
+similarity_ratio_third_person_25 = round(calculate_similarity_between_documents(generated_summaries[0], group1_summaries_25[2]).item(1), 3)
+similarity_ratio_forth_person_25 = round(calculate_similarity_between_documents(generated_summaries[0], group1_summaries_25[3]).item(1), 3)
+similarity_ratio_fifth_person_25 = round(calculate_similarity_between_documents(generated_summaries[0], group1_summaries_25[4]).item(1), 3)
+
+similarity_ratio_first_person_40 = round(calculate_similarity_between_documents(generated_summaries[1], group1_summaries_40[0]).item(1), 3)
+similarity_ratio_second_person_40 = round(calculate_similarity_between_documents(generated_summaries[1], group1_summaries_40[1]).item(1), 3)
+similarity_ratio_third_person_40 = round(calculate_similarity_between_documents(generated_summaries[1], group1_summaries_40[2]).item(1), 3)
+similarity_ratio_forth_person_40 = round(calculate_similarity_between_documents(generated_summaries[1], group1_summaries_40[3]).item(1), 3)
+similarity_ratio_fifth_person_40 = round(calculate_similarity_between_documents(generated_summaries[1], group1_summaries_40[4]).item(1), 3)
+
+similarity_ratio_first_person_60 = round(calculate_similarity_between_documents(generated_summaries[1], group1_summaries_60[0]).item(1), 3)
+similarity_ratio_second_person_60 = round(calculate_similarity_between_documents(generated_summaries[1], group1_summaries_60[1]).item(1), 3)
+similarity_ratio_third_person_60 = round(calculate_similarity_between_documents(generated_summaries[1], group1_summaries_60[2]).item(1), 3)
+similarity_ratio_forth_person_60 = round(calculate_similarity_between_documents(generated_summaries[1], group1_summaries_60[3]).item(1), 3)
+similarity_ratio_fifth_person_60 = round(calculate_similarity_between_documents(generated_summaries[1], group1_summaries_60[4]).item(1), 3)
