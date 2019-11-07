@@ -78,8 +78,6 @@ def calculate_sentence_score(number_of_occurrences):
                     sentence_score[sentence] = number_of_occurrences[word_value]
         if sentence in sentence_score:
             sentence_score[sentence] = sentence_score[sentence] / word_count_in_sentence_without_stopwords
-    for sentence in sentence_score:
-        print(sentence, " : ", round(sentence_score[sentence], 3))
 
     return sentence_score
 
@@ -91,32 +89,24 @@ def calculate_sentence_score(number_of_occurrences):
 """
 
 
-def calculate_summary_length_25(sentence_score):
+def calculate_total_word(sentence_score):
     total_length_of_words = 0
     for sentence in sentence_score:
         total_length_of_words += len(regex_tokenizer.tokenize(''.join(sentence)))
-    print("Total length of words in text: ", total_length_of_words)
+    return total_length_of_words
 
+
+def calculate_summary_length_25(total_length_of_words):
     length_of_twenty_five_percentage_text = round(total_length_of_words / 4)
     return length_of_twenty_five_percentage_text
 
 
-def calculate_summary_length_40(sentence_score):
-    total_length_of_words = 0
-    for sentence in sentence_score:
-        total_length_of_words += len(regex_tokenizer.tokenize(''.join(sentence)))
-    print("Total length of words in text: ", total_length_of_words)
-
+def calculate_summary_length_40(total_length_of_words):
     length_of_forty_percentage_text = round((total_length_of_words / 5) * 2)
     return length_of_forty_percentage_text
 
 
-def calculate_summary_length_60(sentence_score):
-    total_length_of_words = 0
-    for sentence in sentence_score:
-        total_length_of_words += len(regex_tokenizer.tokenize(''.join(sentence)))
-    print("Total length of words in text: ", total_length_of_words)
-
+def calculate_summary_length_60(total_length_of_words):
     length_of_sixty_percentage_text = round((total_length_of_words / 3) * 3)
     return length_of_sixty_percentage_text
 
@@ -247,11 +237,13 @@ word_occurrence_table = create_word_occurrence_table(pre_processed_text)
 
 calculated_sentence_score = calculate_sentence_score(word_occurrence_table)
 
-calculated_summary_length_25 = calculate_summary_length_25(calculated_sentence_score)
+calculated_total_word = calculate_total_word(calculated_sentence_score)
 
-calculated_summary_length_40 = calculate_summary_length_40(calculated_sentence_score)
+calculated_summary_length_25 = calculate_summary_length_25(calculated_total_word)
 
-calculated_summary_length_60 = calculate_summary_length_60(calculated_sentence_score)
+calculated_summary_length_40 = calculate_summary_length_40(calculated_total_word)
+
+calculated_summary_length_60 = calculate_summary_length_60(calculated_total_word)
 
 ordered_sentences = order_sentences(calculated_sentence_score)
 
