@@ -268,3 +268,18 @@ ordered_sentences = order_sentences(calculated_sentence_score)
 
 generated_summaries = generate_summaries(ordered_sentences, calculated_summary_length_25, calculated_summary_length_40, calculated_summary_length_60)
 
+"""
+    group1_summaries_X consist of 5 summaries.
+    
+    group1_summaries_X[0] : Summary of 1. human.
+    group1_summaries_X[1] : Summary of 2. human.
+    group1_summaries_X[2] : Summary of 3. human.
+    group1_summaries_X[3] : Summary of 4. human.
+    group1_summaries_X[4] : Summary of 5. human.
+    
+"""
+
+
+group1_summaries_25 = read_human_summaries_25()
+group1_summaries_40 = read_human_summaries_40()
+group1_summaries_60 = read_human_summaries_60()
