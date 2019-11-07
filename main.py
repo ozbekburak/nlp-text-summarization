@@ -274,8 +274,7 @@ generated_summaries = generate_summaries(ordered_sentences, calculated_summary_l
     group1_summaries_X[1] : Summary of 2. human.
     group1_summaries_X[2] : Summary of 3. human.
     group1_summaries_X[3] : Summary of 4. human.
-    group1_summaries_X[4] : Summary of 5. human.
-    
+    group1_summaries_X[4] : Summary of 5. human.    
 """
 
 
