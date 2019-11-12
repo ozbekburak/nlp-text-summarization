@@ -9,7 +9,7 @@ news headlines.
 
 1. Turkey-Syria Offensive
 2. Saudi Arabia Oil Attack
-3. Smart Cites
+3. Smart Cities
 
 **Method**
 
