@@ -35,12 +35,12 @@ news headlines.
 
 **References**
 
-Balabantaray, R.C., Sahoo, D.K., Sahoo, B., Swain, M. (2012). Text Summarization Using Term Weights
+Balabantaray, R.C., Sahoo, D.K., Sahoo, B., Swain, M. (2012). **Text Summarization Using Term Weights**
 
-Zaefarian, Reza. A New Algorithm for Term Weighting in Text Summarization Process
+Zaefarian, Reza (2006). **A New Algorithm for Term Weighting in Text Summarization Process**
 
-Kumar, Yogan Jaya. Goh, Ong Sing, Basiron, Halizah, Choon, Ngo Hea, Suppiah, Puspalata C. A review on automatic text summarization approaches
+Kumar, Yogan Jaya. Goh, Ong Sing, Basiron, Halizah, Choon, Ngo Hea, Suppiah, Puspalata C(2016). **A review on automatic text summarization approaches**
 
-Hingu, Dharmendra, Shah, Deep, Udmale. Sandeep S.Automatic text summarization of Wikipedia articles
+Hingu, Dharmendra, Shah, Deep, Udmale, Sandeep S(2015).**Automatic text summarization of Wikipedia articles**
 
-Ramaswamy, Sridhar, DeClerck, Natalie. Customer perception analysis using deep learning and NLP
+Ramaswamy, Sridhar, DeClerck, Natalie(2018). **Customer perception analysis using deep learning and NLP**
