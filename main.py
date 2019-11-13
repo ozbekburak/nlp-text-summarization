@@ -315,25 +315,23 @@ data_frame_summarization = pd.DataFrame.from_dict({
                       round(similarity_ratio_fifth_person_60, 3)]
 }, orient='index', columns=['Human-1', 'Human-2', 'Human-3', 'Human-4', 'Human-5'])
 
-#print(data_frame_summarization.values[1][0])
 
 N = 5
 summaries_25 = (data_frame_summarization.values[0][0]*100, data_frame_summarization.values[0][1]*100,
                 data_frame_summarization.values[0][2]*100, data_frame_summarization.values[0][3]*100,
                 data_frame_summarization.values[0][4]*100)
-summaries_25_std = (20, 30, 32, 10, 20)
 
 fig, ax = plt.subplots()
 
 ind = np.arange(N)    # the x locations for the groups
-width = 0.35         # the width of the bars
+width = 0.35          # the width of the bars
 p1 = ax.bar(ind, summaries_25, width, bottom=0)
 
 
 summaries_40 = (data_frame_summarization.values[1][0]*100, data_frame_summarization.values[1][1]*100,
                 data_frame_summarization.values[1][2]*100, data_frame_summarization.values[1][3]*100,
                 data_frame_summarization.values[1][4]*100)
-summaries_40_std = (30, 25, 20, 31, 22)
+
 p2 = ax.bar(ind + width, summaries_40, width, bottom=0)
 
 ax.set_title('Similarity ratios between machine summary and human summary')
