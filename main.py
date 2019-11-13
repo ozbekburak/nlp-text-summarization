@@ -7,6 +7,9 @@ from nltk.stem import PorterStemmer
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
 import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+
 
 """ 
     Downloading corporas.
@@ -21,11 +24,11 @@ import pandas as pd
 """
 
 with codecs.open('Summaries/Group1/Group1_News_All.txt', 'r', encoding='utf-8', errors='ignore') as group1_news_all:
-    document = group1_news_all.read()
+    document_group1 = group1_news_all.read()
 
 # tokenization
 tokenizer = nltk.data.load('tokenizers/punkt/PY3/english.pickle')
-tokenized_to_sentence = tokenizer.tokenize(document)
+tokenized_to_sentence = tokenizer.tokenize(document_group1)
 
 regex_tokenizer = RegexpTokenizer("[\w']+")
 tokenized_to_word = regex_tokenizer.tokenize(''.join(tokenized_to_sentence))
@@ -231,7 +234,7 @@ def calculate_similarity_between_documents(machine_summary, human_summary):
     return cosine_similarity(tfidf)
 
 
-pre_processed_text = pre_processing(document)
+pre_processed_text = pre_processing(document_group1)
 
 word_occurrence_table = create_word_occurrence_table(pre_processed_text)
 
@@ -312,5 +315,32 @@ data_frame_summarization = pd.DataFrame.from_dict({
                       round(similarity_ratio_fifth_person_60, 3)]
 }, orient='index', columns=['Human-1', 'Human-2', 'Human-3', 'Human-4', 'Human-5'])
 
-print(data_frame_summarization)
+#print(data_frame_summarization.values[1][0])
 
+N = 5
+summaries_25 = (data_frame_summarization.values[0][0]*100, data_frame_summarization.values[0][1]*100,
+                data_frame_summarization.values[0][2]*100, data_frame_summarization.values[0][3]*100,
+                data_frame_summarization.values[0][4]*100)
+summaries_25_std = (20, 30, 32, 10, 20)
+
+fig, ax = plt.subplots()
+
+ind = np.arange(N)    # the x locations for the groups
+width = 0.35         # the width of the bars
+p1 = ax.bar(ind, summaries_25, width, bottom=0)
+
+
+summaries_40 = (data_frame_summarization.values[1][0]*100, data_frame_summarization.values[1][1]*100,
+                data_frame_summarization.values[1][2]*100, data_frame_summarization.values[1][3]*100,
+                data_frame_summarization.values[1][4]*100)
+summaries_40_std = (30, 25, 20, 31, 22)
+p2 = ax.bar(ind + width, summaries_40, width, bottom=0)
+
+ax.set_title('Similarity ratios between machine summary and human summary')
+ax.set_xticks(ind + width / 2)
+ax.set_xticklabels(('Human1', 'Human2', 'Human3', 'Human4', 'Human5'))
+
+ax.legend((p1[0], p2[0]), ('%25', '%40'))
+ax.autoscale_view()
+
+plt.show()
