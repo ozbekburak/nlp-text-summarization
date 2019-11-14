@@ -324,7 +324,7 @@ summaries_25 = (data_frame_summarization.values[0][0]*100, data_frame_summarizat
 fig, ax = plt.subplots()
 
 ind = np.arange(N)    # the x locations for the groups
-width = 0.35          # the width of the bars
+width = 0.25          # the width of the bars
 p1 = ax.bar(ind, summaries_25, width, bottom=0)
 
 
@@ -334,11 +334,17 @@ summaries_40 = (data_frame_summarization.values[1][0]*100, data_frame_summarizat
 
 p2 = ax.bar(ind + width, summaries_40, width, bottom=0)
 
-ax.set_title('Similarity ratios between machine summary and human summary')
+summaries_60 = (data_frame_summarization.values[2][0]*100, data_frame_summarization.values[2][1]*100,
+                data_frame_summarization.values[2][2]*100, data_frame_summarization.values[2][3]*100,
+                data_frame_summarization.values[2][4]*100)
+
+p3 = ax.bar(ind + width*2, summaries_60, width, bottom=0)
+
+ax.set_title('Similarity ratios between machine summary and human summary (percentage)')
 ax.set_xticks(ind + width / 2)
 ax.set_xticklabels(('Human1', 'Human2', 'Human3', 'Human4', 'Human5'))
 
-ax.legend((p1[0], p2[0]), ('%25', '%40'))
+ax.legend((p1[0], p2[0], p3[0]), ('%25', '%40', '%60'))
 ax.autoscale_view()
 
 plt.show()
