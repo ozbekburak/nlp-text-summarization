@@ -1,3 +1,5 @@
+Smart Cities
+
 Smart cities: This city runs on its own operating system
 Sensors distributed across the city will allow the collection of real-time data to improve services, says the council. 
 Using  Internet of Things (IoT) sensors distributed around the city to provide data in real-time data, Hull City Council says it will be able to better control street lighting, refuse collection, parking and traffic congestion, with the goal of providing better services at a reduced cost. 

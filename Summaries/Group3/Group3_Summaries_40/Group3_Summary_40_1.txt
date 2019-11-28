@@ -1,3 +1,5 @@
+Smart Cities
+
 The spread of data from one municipality to another acts as the language that will communicate actionable information in real time, something that has not previously been available. It will be up to each community to decide how it wants to best utilize this new wealth of information.
 The insight gathered by new hardware and software around cities and rural areas will only be as good as how it is acted upon. “You can have a sensor that’s collecting data, but is it in the format you need?
 Collaboration between neighboring towns and governments is critical to this distribution, and challenges still exist on that front, but creating data standards could lead to more collaboration

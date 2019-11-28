@@ -1,3 +1,5 @@
+Smart Cities
+
 Smart cities: This city runs on its own operating system
 Using Internet of Things (IoT) sensors distributed around the city to provide data in real-time data, Hull City Council says it will be able to better control street lighting, refuse collection, parking and traffic congestion, with the goal of providing better services at a reduced cost.  As a founding member of the Smart City Observatory at Bocconi University
 Huawei’s Cloudlink Board allows for smart classrooms to allow for interactive but remote teaching. Using a combination of 5G, Internet of Things (IoT), Big Data and AI, Huawei’s remote classroom solution can also analyse student behaviour and share educational resources. The company also believes that the solution can improve the quality of teaching.

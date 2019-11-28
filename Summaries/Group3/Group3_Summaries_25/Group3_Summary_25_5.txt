@@ -1,4 +1,6 @@
-Sensors distributed across the city will allow the collection of real-time data to improve services, says the council. 
+Smart Cities
+
+Sensors distributed across the city will allow the collection of real-time data to improve services, says the council.
 The platform, called CityOS, pulls together and aggregates information from a range of different IoT sensors, before passing it on to city operators. 
 Published by Swiss business school IMD and the Singapore University of Technology and Design, the index ranked cities in terms of how "smart" they are, which in this case was defined as an urban setting that applies technology to enhance the benefits and diminish the shortcomings of urbanisation. 
 Mr Ng Chee Khern, Permanent Secretary (Smart Nation & Digital Government), said that the index is useful for policymakers to direct their work to what would most benefit citizens and businesses

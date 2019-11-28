@@ -1,3 +1,5 @@
+Smart Cities
+
 Using Internet of Things (IoT) sensors distributed around the city to provide data in real-time data, Hull City Council says it will be able to better control street lighting, refuse collection, parking and traffic congestion, with the goal of providing better services at a reduced cost.
 building on Cisco's platform, we built a central OS that normalises all the data into one language, so that all the sensors can speak to one another seamlessly." The platform, called CityOS, pulls together and aggregates information from a range of different IoT sensors, before passing it on to city operators. This means the data is easier to visualise, and can then be used to better manage resources.
 Sensors installed inside the bins monitor waste levels, and the data is used to determine optimal times for waste collection or more efficient collection routes.  
