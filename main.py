@@ -31,7 +31,7 @@ def select_news_group(group_no):
 
 print("Welcome to comparison of summaries between human and machine!! ")
 print("Group1 : Turkey-Syria Offensive")
-print("Group2 : Saudi-Iran Drone Attack")
+print("Group2 : Saudi Arabia Oil Attack")
 print("Group3 : Smart Cities")
 print("Enter the number of the group you want to see the summary comparison below.")
 
