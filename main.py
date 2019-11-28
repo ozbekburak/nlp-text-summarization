@@ -23,18 +23,32 @@ import matplotlib.pyplot as plt
     reference: https://www.nltk.org/nltk_data/
 """
 
-with codecs.open('Summaries/Group1/Group1_News_All.txt', 'r', encoding='utf-8', errors='ignore') as group1_news_all:
-    document_group1 = group1_news_all.read()
+
+def select_news_group(group_no):
+    location_base = "Summaries/Group{}/Group{}_News_All.txt".format(group_no, group_no)
+    return location_base
+
+
+print("Welcome to comparison of summaries between human and machine!! ")
+print("Group1 : Turkey-Syria Offensive")
+print("Group2 : Saudi-Iran Drone Attack")
+print("Group3 : Smart Cities")
+print("Enter the number of the group you want to see the summary comparison below.")
+
+get_group_number = input("Which group do you want the summary comparison:  ")
+
+with codecs.open(select_news_group(get_group_number), 'r', encoding='utf-8', errors='ignore') as news_all:
+    document = news_all.read()
 
 # tokenization
 tokenizer = nltk.data.load('tokenizers/punkt/PY3/english.pickle')
-tokenized_to_sentence = tokenizer.tokenize(document_group1)
+tokenized_to_sentence = tokenizer.tokenize(document)
 
 regex_tokenizer = RegexpTokenizer("[\w']+")
 tokenized_to_word = regex_tokenizer.tokenize(''.join(tokenized_to_sentence))
 
 
-def pre_processing(text):
+def pre_processing():
     # deleting stopwords
     english_stops = set(stopwords.words('english'))
     tokenized_words_without_stopwords = []
@@ -158,63 +172,63 @@ def generate_summaries(sorted_sentences, length_of_twenty_five_percentage_text, 
 
 
 def read_human_summaries_25():
-    with codecs.open('Summaries/Group1/Group1_Summaries_25/Group1_Summary_25_1.txt', 'r', encoding='utf-8',
-                     errors='ignore') as group1_summary_25_1:
-        group1_summary_25_1_text = group1_summary_25_1.read()
-    with codecs.open('Summaries/Group1/Group1_Summaries_25/Group1_Summary_25_2.txt', 'r', encoding='utf-8',
-                     errors='ignore') as group1_summary_25_2:
-        group1_summary_25_2_text = group1_summary_25_2.read()
-    with codecs.open('Summaries/Group1/Group1_Summaries_25/Group1_Summary_25_3.txt', 'r', encoding='utf-8',
-                     errors='ignore') as group1_summary_25_3:
-        group1_summary_25_3_text = group1_summary_25_3.read()
-    with codecs.open('Summaries/Group1/Group1_Summaries_25/Group1_Summary_25_4.txt', 'r', encoding='utf-8',
-                     errors='ignore') as group1_summary_25_4:
-        group1_summary_25_4_text = group1_summary_25_4.read()
-    with codecs.open('Summaries/Group1/Group1_Summaries_25/Group1_Summary_25_5.txt', 'r', encoding='utf-8',
-                     errors='ignore') as group1_summary_25_5:
-        group1_summary_25_5_text = group1_summary_25_5.read()
+    with codecs.open('Summaries/Group{}/Group{}_Summaries_25/Group{}_Summary_25_1.txt'.format(get_group_number, get_group_number, get_group_number), 'r', encoding='utf-8',
+                     errors='ignore') as group_summary_25_1:
+        group_summary_25_1_text = group_summary_25_1.read()
+    with codecs.open('Summaries/Group{}/Group{}_Summaries_25/Group{}_Summary_25_2.txt'.format(get_group_number, get_group_number, get_group_number), 'r', encoding='utf-8',
+                     errors='ignore') as group_summary_25_2:
+        group_summary_25_2_text = group_summary_25_2.read()
+    with codecs.open('Summaries/Group{}/Group{}_Summaries_25/Group{}_Summary_25_3.txt'.format(get_group_number, get_group_number, get_group_number), 'r', encoding='utf-8',
+                     errors='ignore') as group_summary_25_3:
+        group_summary_25_3_text = group_summary_25_3.read()
+    with codecs.open('Summaries/Group{}/Group{}_Summaries_25/Group{}_Summary_25_4.txt'.format(get_group_number, get_group_number, get_group_number), 'r', encoding='utf-8',
+                     errors='ignore') as group_summary_25_4:
+        group_summary_25_4_text = group_summary_25_4.read()
+    with codecs.open('Summaries/Group{}/Group{}_Summaries_25/Group{}_Summary_25_5.txt'.format(get_group_number, get_group_number, get_group_number), 'r', encoding='utf-8',
+                     errors='ignore') as group_summary_25_5:
+        group_summary_25_5_text = group_summary_25_5.read()
 
-    return group1_summary_25_1_text, group1_summary_25_2_text, group1_summary_25_3_text, group1_summary_25_4_text, group1_summary_25_5_text
+    return group_summary_25_1_text, group_summary_25_2_text, group_summary_25_3_text, group_summary_25_4_text, group_summary_25_5_text
 
 
 def read_human_summaries_40():
-    with codecs.open('Summaries/Group1/Group1_Summaries_40/Group1_Summary_40_1.txt', 'r', encoding='utf-8',
-                     errors='ignore') as group1_summary_40_1:
-        group1_summary_40_1_text = group1_summary_40_1.read()
-    with codecs.open('Summaries/Group1/Group1_Summaries_40/Group1_Summary_40_2.txt', 'r', encoding='utf-8',
-                     errors='ignore') as group1_summary_40_2:
-        group1_summary_40_2_text = group1_summary_40_2.read()
-    with codecs.open('Summaries/Group1/Group1_Summaries_40/Group1_Summary_40_3.txt', 'r', encoding='utf-8',
-                     errors='ignore') as group1_summary_40_3:
-        group1_summary_40_3_text = group1_summary_40_3.read()
-    with codecs.open('Summaries/Group1/Group1_Summaries_40/Group1_Summary_40_4.txt', 'r', encoding='utf-8',
-                     errors='ignore') as group1_summary_40_4:
-        group1_summary_40_4_text = group1_summary_40_4.read()
-    with codecs.open('Summaries/Group1/Group1_Summaries_40/Group1_Summary_40_5.txt', 'r', encoding='utf-8',
-                     errors='ignore') as group1_summary_40_5:
-        group1_summary_40_5_text = group1_summary_40_5.read()
+    with codecs.open('Summaries/Group{}/Group{}_Summaries_40/Group{}_Summary_40_1.txt'.format(get_group_number, get_group_number, get_group_number), 'r', encoding='utf-8',
+                     errors='ignore') as group_summary_40_1:
+        group_summary_40_1_text = group_summary_40_1.read()
+    with codecs.open('Summaries/Group{}/Group{}_Summaries_40/Group{}_Summary_40_2.txt'.format(get_group_number, get_group_number, get_group_number), 'r', encoding='utf-8',
+                     errors='ignore') as group_summary_40_2:
+        group_summary_40_2_text = group_summary_40_2.read()
+    with codecs.open('Summaries/Group{}/Group{}_Summaries_40/Group{}_Summary_40_3.txt'.format(get_group_number, get_group_number, get_group_number), 'r', encoding='utf-8',
+                     errors='ignore') as group_summary_40_3:
+        group_summary_40_3_text = group_summary_40_3.read()
+    with codecs.open('Summaries/Group{}/Group{}_Summaries_40/Group{}_Summary_40_4.txt'.format(get_group_number, get_group_number, get_group_number), 'r', encoding='utf-8',
+                     errors='ignore') as group_summary_40_4:
+        group_summary_40_4_text = group_summary_40_4.read()
+    with codecs.open('Summaries/Group{}/Group{}_Summaries_40/Group{}_Summary_40_5.txt'.format(get_group_number, get_group_number, get_group_number), 'r', encoding='utf-8',
+                     errors='ignore') as group_summary_40_5:
+        group_summary_40_5_text = group_summary_40_5.read()
 
-    return group1_summary_40_1_text, group1_summary_40_2_text, group1_summary_40_3_text, group1_summary_40_4_text, group1_summary_40_5_text
+    return group_summary_40_1_text, group_summary_40_2_text, group_summary_40_3_text, group_summary_40_4_text, group_summary_40_5_text
 
 
 def read_human_summaries_60():
-    with codecs.open('Summaries/Group1/Group1_Summaries_60/Group1_Summary_60_1.txt', 'r', encoding='utf-8',
-                     errors='ignore') as group1_summary_60_1:
-        group1_summary_60_1_text = group1_summary_60_1.read()
-    with codecs.open('Summaries/Group1/Group1_Summaries_60/Group1_Summary_60_2.txt', 'r', encoding='utf-8',
-                     errors='ignore') as group1_summary_60_2:
-        group1_summary_60_2_text = group1_summary_60_2.read()
-    with codecs.open('Summaries/Group1/Group1_Summaries_60/Group1_Summary_60_3.txt', 'r', encoding='utf-8',
-                     errors='ignore') as group1_summary_60_3:
-        group1_summary_60_3_text = group1_summary_60_3.read()
-    with codecs.open('Summaries/Group1/Group1_Summaries_60/Group1_Summary_60_4.txt', 'r', encoding='utf-8',
-                     errors='ignore') as group1_summary_60_4:
-        group1_summary_60_4_text = group1_summary_60_4.read()
-    with codecs.open('Summaries/Group1/Group1_Summaries_60/Group1_Summary_60_5.txt', 'r', encoding='utf-8',
-                     errors='ignore') as group1_summary_60_5:
-        group1_summary_60_5_text = group1_summary_60_5.read()
+    with codecs.open('Summaries/Group{}/Group{}_Summaries_60/Group{}_Summary_60_1.txt'.format(get_group_number, get_group_number, get_group_number), 'r', encoding='utf-8',
+                     errors='ignore') as group_summary_60_1:
+        group_summary_60_1_text = group_summary_60_1.read()
+    with codecs.open('Summaries/Group{}/Group{}_Summaries_60/Group{}_Summary_60_2.txt'.format(get_group_number, get_group_number, get_group_number), 'r', encoding='utf-8',
+                     errors='ignore') as group_summary_60_2:
+        group_summary_60_2_text = group_summary_60_2.read()
+    with codecs.open('Summaries/Group{}/Group{}_Summaries_60/Group{}_Summary_60_3.txt'.format(get_group_number, get_group_number, get_group_number), 'r', encoding='utf-8',
+                     errors='ignore') as group_summary_60_3:
+        group_summary_60_3_text = group_summary_60_3.read()
+    with codecs.open('Summaries/Group{}/Group{}_Summaries_60/Group{}_Summary_60_4.txt'.format(get_group_number, get_group_number, get_group_number), 'r', encoding='utf-8',
+                     errors='ignore') as group_summary_60_4:
+        group_summary_60_4_text = group_summary_60_4.read()
+    with codecs.open('Summaries/Group{}/Group{}_Summaries_60/Group{}_Summary_60_5.txt'.format(get_group_number, get_group_number, get_group_number), 'r', encoding='utf-8',
+                     errors='ignore') as group_summary_60_5:
+        group_summary_60_5_text = group_summary_60_5.read()
 
-    return group1_summary_60_1_text, group1_summary_60_2_text, group1_summary_60_3_text, group1_summary_60_4_text, group1_summary_60_5_text
+    return group_summary_60_1_text, group_summary_60_2_text, group_summary_60_3_text, group_summary_60_4_text, group_summary_60_5_text
 
 
 """
@@ -234,7 +248,7 @@ def calculate_similarity_between_documents(machine_summary, human_summary):
     return cosine_similarity(tfidf)
 
 
-pre_processed_text = pre_processing(document_group1)
+pre_processed_text = pre_processing()
 
 word_occurrence_table = create_word_occurrence_table(pre_processed_text)
 
@@ -273,28 +287,28 @@ generated_summaries = generate_summaries(ordered_sentences, calculated_summary_l
 """
 
 
-group1_summaries_25 = read_human_summaries_25()
-group1_summaries_40 = read_human_summaries_40()
-group1_summaries_60 = read_human_summaries_60()
+group_summaries_25 = read_human_summaries_25()
+group_summaries_40 = read_human_summaries_40()
+group_summaries_60 = read_human_summaries_60()
 
 
-similarity_ratio_first_person_25 = round(calculate_similarity_between_documents(generated_summaries[0], group1_summaries_25[0]).item(1), 3)
-similarity_ratio_second_person_25 = round(calculate_similarity_between_documents(generated_summaries[0], group1_summaries_25[1]).item(1), 3)
-similarity_ratio_third_person_25 = round(calculate_similarity_between_documents(generated_summaries[0], group1_summaries_25[2]).item(1), 3)
-similarity_ratio_forth_person_25 = round(calculate_similarity_between_documents(generated_summaries[0], group1_summaries_25[3]).item(1), 3)
-similarity_ratio_fifth_person_25 = round(calculate_similarity_between_documents(generated_summaries[0], group1_summaries_25[4]).item(1), 3)
+similarity_ratio_first_person_25 = round(calculate_similarity_between_documents(generated_summaries[0], group_summaries_25[0]).item(1), 3)
+similarity_ratio_second_person_25 = round(calculate_similarity_between_documents(generated_summaries[0], group_summaries_25[1]).item(1), 3)
+similarity_ratio_third_person_25 = round(calculate_similarity_between_documents(generated_summaries[0], group_summaries_25[2]).item(1), 3)
+similarity_ratio_forth_person_25 = round(calculate_similarity_between_documents(generated_summaries[0], group_summaries_25[3]).item(1), 3)
+similarity_ratio_fifth_person_25 = round(calculate_similarity_between_documents(generated_summaries[0], group_summaries_25[4]).item(1), 3)
 
-similarity_ratio_first_person_40 = round(calculate_similarity_between_documents(generated_summaries[1], group1_summaries_40[0]).item(1), 3)
-similarity_ratio_second_person_40 = round(calculate_similarity_between_documents(generated_summaries[1], group1_summaries_40[1]).item(1), 3)
-similarity_ratio_third_person_40 = round(calculate_similarity_between_documents(generated_summaries[1], group1_summaries_40[2]).item(1), 3)
-similarity_ratio_forth_person_40 = round(calculate_similarity_between_documents(generated_summaries[1], group1_summaries_40[3]).item(1), 3)
-similarity_ratio_fifth_person_40 = round(calculate_similarity_between_documents(generated_summaries[1], group1_summaries_40[4]).item(1), 3)
+similarity_ratio_first_person_40 = round(calculate_similarity_between_documents(generated_summaries[1], group_summaries_40[0]).item(1), 3)
+similarity_ratio_second_person_40 = round(calculate_similarity_between_documents(generated_summaries[1], group_summaries_40[1]).item(1), 3)
+similarity_ratio_third_person_40 = round(calculate_similarity_between_documents(generated_summaries[1], group_summaries_40[2]).item(1), 3)
+similarity_ratio_forth_person_40 = round(calculate_similarity_between_documents(generated_summaries[1], group_summaries_40[3]).item(1), 3)
+similarity_ratio_fifth_person_40 = round(calculate_similarity_between_documents(generated_summaries[1], group_summaries_40[4]).item(1), 3)
 
-similarity_ratio_first_person_60 = round(calculate_similarity_between_documents(generated_summaries[1], group1_summaries_60[0]).item(1), 3)
-similarity_ratio_second_person_60 = round(calculate_similarity_between_documents(generated_summaries[1], group1_summaries_60[1]).item(1), 3)
-similarity_ratio_third_person_60 = round(calculate_similarity_between_documents(generated_summaries[1], group1_summaries_60[2]).item(1), 3)
-similarity_ratio_forth_person_60 = round(calculate_similarity_between_documents(generated_summaries[1], group1_summaries_60[3]).item(1), 3)
-similarity_ratio_fifth_person_60 = round(calculate_similarity_between_documents(generated_summaries[1], group1_summaries_60[4]).item(1), 3)
+similarity_ratio_first_person_60 = round(calculate_similarity_between_documents(generated_summaries[1], group_summaries_60[0]).item(1), 3)
+similarity_ratio_second_person_60 = round(calculate_similarity_between_documents(generated_summaries[1], group_summaries_60[1]).item(1), 3)
+similarity_ratio_third_person_60 = round(calculate_similarity_between_documents(generated_summaries[1], group_summaries_60[2]).item(1), 3)
+similarity_ratio_forth_person_60 = round(calculate_similarity_between_documents(generated_summaries[1], group_summaries_60[3]).item(1), 3)
+similarity_ratio_fifth_person_60 = round(calculate_similarity_between_documents(generated_summaries[1], group_summaries_60[4]).item(1), 3)
 
 
 data_frame_summarization = pd.DataFrame.from_dict({
@@ -341,7 +355,7 @@ summaries_60 = (data_frame_summarization.values[2][0]*100, data_frame_summarizat
 p3 = ax.bar(ind + width*2, summaries_60, width, bottom=0)
 
 ax.set_title('Similarity ratios between machine summary and human summary (percentage)')
-ax.set_xticks(ind + width / 2)
+ax.set_xticks(ind + width)
 ax.set_xticklabels(('Human1', 'Human2', 'Human3', 'Human4', 'Human5'))
 
 ax.legend((p1[0], p2[0], p3[0]), ('%25', '%40', '%60'))
