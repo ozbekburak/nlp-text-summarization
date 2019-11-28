@@ -9,7 +9,7 @@ from sklearn.metrics.pairwise import cosine_similarity
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
-
+from google_ngram_downloader import readline_google_store
 
 """ 
     Downloading corporas.
@@ -30,9 +30,9 @@ def select_news_group(group_no):
 
 
 print("Welcome to comparison of summaries between human and machine!! ")
-print("Group1 : Turkey-Syria Offensive")
-print("Group2 : Saudi Arabia Oil Attack")
-print("Group3 : Smart Cities")
+print("Group 1 : Turkey-Syria Offensive")
+print("Group 2 : Saudi Arabia Oil Attack")
+print("Group 3 : Smart Cities")
 print("Enter the number of the group you want to see the summary comparison below.")
 
 get_group_number = input("Which group do you want the summary comparison:  ")
@@ -354,7 +354,7 @@ summaries_60 = (data_frame_summarization.values[2][0]*100, data_frame_summarizat
 
 p3 = ax.bar(ind + width*2, summaries_60, width, bottom=0)
 
-ax.set_title('Similarity ratios between machine summary and human summary (percentage)')
+ax.set_title('Similarity comparison percentage for Group{} (%)'.format(get_group_number))
 ax.set_xticks(ind + width)
 ax.set_xticklabels(('Human1', 'Human2', 'Human3', 'Human4', 'Human5'))
 
