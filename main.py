@@ -311,7 +311,27 @@ similarity_ratio_second_person_60 = round(calculate_similarity_between_documents
 similarity_ratio_third_person_60 = round(calculate_similarity_between_documents(generated_summaries[2], group_summaries_60[2]).item(1), 3)
 similarity_ratio_forth_person_60 = round(calculate_similarity_between_documents(generated_summaries[2], group_summaries_60[3]).item(1), 3)
 similarity_ratio_fifth_person_60 = round(calculate_similarity_between_documents(generated_summaries[2], group_summaries_60[4]).item(1), 3)
-print(Simhash(generated_summaries[1]).distance(Simhash(group_summaries_40[0])))
+
+print("------------------------------")
+print("Similarity check with HashSim!")
+print("------------------------------")
+print("Group {}, %25 similarity distance: {}".format(get_group_number, Simhash(generated_summaries[0]).distance(Simhash(group_summaries_25[0]))))
+print("Group {}, %25 similarity distance: {}".format(get_group_number, Simhash(generated_summaries[0]).distance(Simhash(group_summaries_25[1]))))
+print("Group {}, %25 similarity distance: {}".format(get_group_number, Simhash(generated_summaries[0]).distance(Simhash(group_summaries_25[2]))))
+print("Group {}, %25 similarity distance: {}".format(get_group_number, Simhash(generated_summaries[0]).distance(Simhash(group_summaries_25[3]))))
+print("Group {}, %25 similarity distance: {}".format(get_group_number, Simhash(generated_summaries[0]).distance(Simhash(group_summaries_25[4]))))
+
+print("Group {}, %40 similarity distance: {}".format(get_group_number, Simhash(generated_summaries[1]).distance(Simhash(group_summaries_40[0]))))
+print("Group {}, %40 similarity distance: {}".format(get_group_number, Simhash(generated_summaries[1]).distance(Simhash(group_summaries_40[1]))))
+print("Group {}, %40 similarity distance: {}".format(get_group_number, Simhash(generated_summaries[1]).distance(Simhash(group_summaries_40[2]))))
+print("Group {}, %40 similarity distance: {}".format(get_group_number, Simhash(generated_summaries[1]).distance(Simhash(group_summaries_40[3]))))
+print("Group {}, %40 similarity distance: {}".format(get_group_number, Simhash(generated_summaries[1]).distance(Simhash(group_summaries_40[4]))))
+
+print("Group {}, %60 similarity distance: {}".format(get_group_number, Simhash(generated_summaries[2]).distance(Simhash(group_summaries_60[0]))))
+print("Group {}, %60 similarity distance: {}".format(get_group_number, Simhash(generated_summaries[2]).distance(Simhash(group_summaries_60[1]))))
+print("Group {}, %60 similarity distance: {}".format(get_group_number, Simhash(generated_summaries[2]).distance(Simhash(group_summaries_60[2]))))
+print("Group {}, %60 similarity distance: {}".format(get_group_number, Simhash(generated_summaries[2]).distance(Simhash(group_summaries_60[3]))))
+print("Group {}, %60 similarity distance: {}".format(get_group_number, Simhash(generated_summaries[2]).distance(Simhash(group_summaries_60[4]))))
 
 data_frame_summarization = pd.DataFrame.from_dict({
     'Machine (%25)': [round(similarity_ratio_first_person_25, 3),
