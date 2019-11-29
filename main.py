@@ -10,6 +10,7 @@ import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 from google_ngram_downloader import readline_google_store
+from simhash import Simhash
 
 """ 
     Downloading corporas.
@@ -298,18 +299,19 @@ similarity_ratio_third_person_25 = round(calculate_similarity_between_documents(
 similarity_ratio_forth_person_25 = round(calculate_similarity_between_documents(generated_summaries[0], group_summaries_25[3]).item(1), 3)
 similarity_ratio_fifth_person_25 = round(calculate_similarity_between_documents(generated_summaries[0], group_summaries_25[4]).item(1), 3)
 
+
 similarity_ratio_first_person_40 = round(calculate_similarity_between_documents(generated_summaries[1], group_summaries_40[0]).item(1), 3)
 similarity_ratio_second_person_40 = round(calculate_similarity_between_documents(generated_summaries[1], group_summaries_40[1]).item(1), 3)
 similarity_ratio_third_person_40 = round(calculate_similarity_between_documents(generated_summaries[1], group_summaries_40[2]).item(1), 3)
 similarity_ratio_forth_person_40 = round(calculate_similarity_between_documents(generated_summaries[1], group_summaries_40[3]).item(1), 3)
 similarity_ratio_fifth_person_40 = round(calculate_similarity_between_documents(generated_summaries[1], group_summaries_40[4]).item(1), 3)
 
-similarity_ratio_first_person_60 = round(calculate_similarity_between_documents(generated_summaries[1], group_summaries_60[0]).item(1), 3)
-similarity_ratio_second_person_60 = round(calculate_similarity_between_documents(generated_summaries[1], group_summaries_60[1]).item(1), 3)
-similarity_ratio_third_person_60 = round(calculate_similarity_between_documents(generated_summaries[1], group_summaries_60[2]).item(1), 3)
-similarity_ratio_forth_person_60 = round(calculate_similarity_between_documents(generated_summaries[1], group_summaries_60[3]).item(1), 3)
-similarity_ratio_fifth_person_60 = round(calculate_similarity_between_documents(generated_summaries[1], group_summaries_60[4]).item(1), 3)
-
+similarity_ratio_first_person_60 = round(calculate_similarity_between_documents(generated_summaries[2], group_summaries_60[0]).item(1), 3)
+similarity_ratio_second_person_60 = round(calculate_similarity_between_documents(generated_summaries[2], group_summaries_60[1]).item(1), 3)
+similarity_ratio_third_person_60 = round(calculate_similarity_between_documents(generated_summaries[2], group_summaries_60[2]).item(1), 3)
+similarity_ratio_forth_person_60 = round(calculate_similarity_between_documents(generated_summaries[2], group_summaries_60[3]).item(1), 3)
+similarity_ratio_fifth_person_60 = round(calculate_similarity_between_documents(generated_summaries[2], group_summaries_60[4]).item(1), 3)
+print(Simhash(generated_summaries[1]).distance(Simhash(group_summaries_40[0])))
 
 data_frame_summarization = pd.DataFrame.from_dict({
     'Machine (%25)': [round(similarity_ratio_first_person_25, 3),
