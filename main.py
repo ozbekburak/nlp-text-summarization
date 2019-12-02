@@ -37,7 +37,7 @@ print("Group 3 : Smart Cities")
 print("Enter the number of the group you want to see the summary comparison below.")
 
 get_group_number = input("Which group do you want the summary comparison:  ")
-
+similarity_type = input("Which similarity method do you want the use: (please enter `cosin` or `hashsim`) ")
 with codecs.open(select_news_group(get_group_number), 'r', encoding='utf-8', errors='ignore') as news_all:
     document = news_all.read()
 
@@ -312,26 +312,33 @@ similarity_ratio_third_person_60 = round(calculate_similarity_between_documents(
 similarity_ratio_forth_person_60 = round(calculate_similarity_between_documents(generated_summaries[2], group_summaries_60[3]).item(1), 3)
 similarity_ratio_fifth_person_60 = round(calculate_similarity_between_documents(generated_summaries[2], group_summaries_60[4]).item(1), 3)
 
-print("------------------------------")
-print("Similarity check with HashSim!")
-print("------------------------------")
-print("Group {}, %25 similarity distance: {}".format(get_group_number, Simhash(generated_summaries[0]).distance(Simhash(group_summaries_25[0]))))
-print("Group {}, %25 similarity distance: {}".format(get_group_number, Simhash(generated_summaries[0]).distance(Simhash(group_summaries_25[1]))))
-print("Group {}, %25 similarity distance: {}".format(get_group_number, Simhash(generated_summaries[0]).distance(Simhash(group_summaries_25[2]))))
-print("Group {}, %25 similarity distance: {}".format(get_group_number, Simhash(generated_summaries[0]).distance(Simhash(group_summaries_25[3]))))
-print("Group {}, %25 similarity distance: {}".format(get_group_number, Simhash(generated_summaries[0]).distance(Simhash(group_summaries_25[4]))))
+'''
+    Similarity check with hashsim.
+    
+    Actually, it calculates the distance between the text/documents.
+    To do make some comparison with cosin similarity, i have substracted all values from 100.
+'''
 
-print("Group {}, %40 similarity distance: {}".format(get_group_number, Simhash(generated_summaries[1]).distance(Simhash(group_summaries_40[0]))))
-print("Group {}, %40 similarity distance: {}".format(get_group_number, Simhash(generated_summaries[1]).distance(Simhash(group_summaries_40[1]))))
-print("Group {}, %40 similarity distance: {}".format(get_group_number, Simhash(generated_summaries[1]).distance(Simhash(group_summaries_40[2]))))
-print("Group {}, %40 similarity distance: {}".format(get_group_number, Simhash(generated_summaries[1]).distance(Simhash(group_summaries_40[3]))))
-print("Group {}, %40 similarity distance: {}".format(get_group_number, Simhash(generated_summaries[1]).distance(Simhash(group_summaries_40[4]))))
+similarity_ratio_first_person_25_hashsim = 100 - Simhash(generated_summaries[0]).distance(Simhash(group_summaries_25[0]))
+similarity_ratio_second_person_25_hashsim = 100 - Simhash(generated_summaries[0]).distance(Simhash(group_summaries_25[1]))
+similarity_ratio_third_person_25_hashsim = 100 - Simhash(generated_summaries[0]).distance(Simhash(group_summaries_25[2]))
+similarity_ratio_forth_person_25_hashsim = 100 - Simhash(generated_summaries[0]).distance(Simhash(group_summaries_25[3]))
+similarity_ratio_fifth_person_25_hashsim = 100 - Simhash(generated_summaries[0]).distance(Simhash(group_summaries_25[4]))
 
-print("Group {}, %60 similarity distance: {}".format(get_group_number, Simhash(generated_summaries[2]).distance(Simhash(group_summaries_60[0]))))
-print("Group {}, %60 similarity distance: {}".format(get_group_number, Simhash(generated_summaries[2]).distance(Simhash(group_summaries_60[1]))))
-print("Group {}, %60 similarity distance: {}".format(get_group_number, Simhash(generated_summaries[2]).distance(Simhash(group_summaries_60[2]))))
-print("Group {}, %60 similarity distance: {}".format(get_group_number, Simhash(generated_summaries[2]).distance(Simhash(group_summaries_60[3]))))
-print("Group {}, %60 similarity distance: {}".format(get_group_number, Simhash(generated_summaries[2]).distance(Simhash(group_summaries_60[4]))))
+
+similarity_ratio_first_person_40_hashsim = 100 - Simhash(generated_summaries[1]).distance(Simhash(group_summaries_25[0]))
+similarity_ratio_second_person_40_hashsim = 100 - Simhash(generated_summaries[1]).distance(Simhash(group_summaries_25[1]))
+similarity_ratio_third_person_40_hashsim = 100 - Simhash(generated_summaries[1]).distance(Simhash(group_summaries_25[2]))
+similarity_ratio_forth_person_40_hashsim = 100 - Simhash(generated_summaries[1]).distance(Simhash(group_summaries_25[3]))
+similarity_ratio_fifth_person_40_hashsim = 100 - Simhash(generated_summaries[1]).distance(Simhash(group_summaries_25[4]))
+
+
+similarity_ratio_first_person_60_hashsim = 100 - Simhash(generated_summaries[2]).distance(Simhash(group_summaries_25[0]))
+similarity_ratio_second_person_60_hashsim = 100 - Simhash(generated_summaries[2]).distance(Simhash(group_summaries_25[1]))
+similarity_ratio_third_person_60_hashsim = 100 - Simhash(generated_summaries[2]).distance(Simhash(group_summaries_25[2]))
+similarity_ratio_forth_person_60_hashsim = 100 - Simhash(generated_summaries[2]).distance(Simhash(group_summaries_25[3]))
+similarity_ratio_fifth_person_60_hashsim = 100 - Simhash(generated_summaries[2]).distance(Simhash(group_summaries_25[4]))
+
 
 data_frame_summarization = pd.DataFrame.from_dict({
     'Machine (%25)': [round(similarity_ratio_first_person_25, 3),
@@ -352,10 +359,37 @@ data_frame_summarization = pd.DataFrame.from_dict({
 }, orient='index', columns=['Human-1', 'Human-2', 'Human-3', 'Human-4', 'Human-5'])
 
 
+data_frame_summarization_hashsim = pd.DataFrame.from_dict({
+    'Machine (%25)': [similarity_ratio_first_person_25_hashsim,
+                      similarity_ratio_second_person_25_hashsim,
+                      similarity_ratio_third_person_25_hashsim,
+                      similarity_ratio_forth_person_25_hashsim,
+                      similarity_ratio_fifth_person_25_hashsim],
+    'Machine (%40)': [similarity_ratio_first_person_40_hashsim,
+                      similarity_ratio_second_person_40_hashsim,
+                      similarity_ratio_third_person_40_hashsim,
+                      similarity_ratio_forth_person_40_hashsim,
+                      similarity_ratio_fifth_person_40_hashsim],
+    'Machine (%60)': [similarity_ratio_first_person_60_hashsim,
+                      similarity_ratio_second_person_60_hashsim,
+                      similarity_ratio_third_person_60_hashsim,
+                      similarity_ratio_forth_person_60_hashsim,
+                      similarity_ratio_fifth_person_60_hashsim]
+}, orient='index', columns=['Human-1', 'Human-2', 'Human-3', 'Human-4', 'Human-5'])
+
+
 N = 5
-summaries_25 = (data_frame_summarization.values[0][0]*100, data_frame_summarization.values[0][1]*100,
-                data_frame_summarization.values[0][2]*100, data_frame_summarization.values[0][3]*100,
-                data_frame_summarization.values[0][4]*100)
+if similarity_type == "cosin":
+    summaries_25 = (data_frame_summarization.values[0][0]*100, data_frame_summarization.values[0][1]*100,
+                    data_frame_summarization.values[0][2]*100, data_frame_summarization.values[0][3]*100,
+                    data_frame_summarization.values[0][4]*100)
+elif similarity_type == "hashsim":
+    summaries_25 = (data_frame_summarization_hashsim.values[0][0], data_frame_summarization_hashsim.values[0][1],
+                    data_frame_summarization_hashsim.values[0][2], data_frame_summarization_hashsim.values[0][3],
+                    data_frame_summarization_hashsim.values[0][4])
+else:
+    print("Invalid similarity type entered!! Try again.")
+
 
 fig, ax = plt.subplots()
 
@@ -363,20 +397,31 @@ ind = np.arange(N)    # the x locations for the groups
 width = 0.25          # the width of the bars
 p1 = ax.bar(ind, summaries_25, width, bottom=0)
 
-
-summaries_40 = (data_frame_summarization.values[1][0]*100, data_frame_summarization.values[1][1]*100,
-                data_frame_summarization.values[1][2]*100, data_frame_summarization.values[1][3]*100,
-                data_frame_summarization.values[1][4]*100)
-
+if similarity_type == "cosin":
+    summaries_40 = (data_frame_summarization.values[1][0]*100, data_frame_summarization.values[1][1]*100,
+                    data_frame_summarization.values[1][2]*100, data_frame_summarization.values[1][3]*100,
+                    data_frame_summarization.values[1][4]*100)
+elif similarity_type == "hashsim":
+    summaries_40 = (data_frame_summarization_hashsim.values[1][0], data_frame_summarization_hashsim.values[1][1],
+                    data_frame_summarization_hashsim.values[1][2], data_frame_summarization_hashsim.values[1][3],
+                    data_frame_summarization_hashsim.values[1][4])
+else:
+    print("Invalid similarity type entered!! Try again.")
 p2 = ax.bar(ind + width, summaries_40, width, bottom=0)
 
-summaries_60 = (data_frame_summarization.values[2][0]*100, data_frame_summarization.values[2][1]*100,
-                data_frame_summarization.values[2][2]*100, data_frame_summarization.values[2][3]*100,
-                data_frame_summarization.values[2][4]*100)
-
+if similarity_type == "cosin":
+    summaries_60 = (data_frame_summarization.values[2][0]*100, data_frame_summarization.values[2][1]*100,
+                    data_frame_summarization.values[2][2]*100, data_frame_summarization.values[2][3]*100,
+                    data_frame_summarization.values[2][4]*100)
+elif similarity_type == "hashsim":
+    summaries_60 = (data_frame_summarization_hashsim.values[2][0], data_frame_summarization_hashsim.values[2][1],
+                    data_frame_summarization_hashsim.values[2][2], data_frame_summarization_hashsim.values[2][3],
+                    data_frame_summarization_hashsim.values[2][4])
+else:
+    print("Invalid similarity type entered!! Try again.")
 p3 = ax.bar(ind + width*2, summaries_60, width, bottom=0)
 
-ax.set_title('Similarity comparison percentage for Group{} (%)'.format(get_group_number))
+ax.set_title('Similarity comparison ({}) percentage for Group{} (%)'.format(similarity_type ,get_group_number))
 ax.set_xticks(ind + width)
 ax.set_xticklabels(('Human1', 'Human2', 'Human3', 'Human4', 'Human5'))
 
