@@ -14,7 +14,6 @@ from simhash import Simhash
 
 """ 
     Downloading corporas.
-    
     We only need it once.
     
     punkt: Tokenizer. Divides a text into a list of sentences. 
@@ -40,6 +39,7 @@ get_group_number = input("Which group do you want the summary comparison:  ")
 similarity_type = input("Which similarity method do you want the use: (please enter `cosin` or `hashsim`) ")
 with codecs.open(select_news_group(get_group_number), 'r', encoding='utf-8', errors='ignore') as news_all:
     document = news_all.read()
+
 
 # tokenization
 tokenizer = nltk.data.load('tokenizers/punkt/PY3/english.pickle')
@@ -316,28 +316,29 @@ similarity_ratio_fifth_person_60 = round(calculate_similarity_between_documents(
     Similarity check with hashsim.
     
     Actually, it calculates the distance between the text/documents.
-    To do make some comparison with cosin similarity, i have substracted all values from 100.
+    
 '''
 
-similarity_ratio_first_person_25_hashsim = 100 - Simhash(generated_summaries[0]).distance(Simhash(group_summaries_25[0]))
-similarity_ratio_second_person_25_hashsim = 100 - Simhash(generated_summaries[0]).distance(Simhash(group_summaries_25[1]))
-similarity_ratio_third_person_25_hashsim = 100 - Simhash(generated_summaries[0]).distance(Simhash(group_summaries_25[2]))
-similarity_ratio_forth_person_25_hashsim = 100 - Simhash(generated_summaries[0]).distance(Simhash(group_summaries_25[3]))
-similarity_ratio_fifth_person_25_hashsim = 100 - Simhash(generated_summaries[0]).distance(Simhash(group_summaries_25[4]))
+
+similarity_ratio_first_person_25_hashsim = (1 - (Simhash(generated_summaries[0]).distance(Simhash(group_summaries_25[0])) / 64)) * 100
+similarity_ratio_second_person_25_hashsim = (1 - (Simhash(generated_summaries[0]).distance(Simhash(group_summaries_25[1])) / 64)) * 100
+similarity_ratio_third_person_25_hashsim = (1 - (Simhash(generated_summaries[0]).distance(Simhash(group_summaries_25[2])) / 64)) * 100
+similarity_ratio_forth_person_25_hashsim = (1 - (Simhash(generated_summaries[0]).distance(Simhash(group_summaries_25[3])) / 64)) * 100
+similarity_ratio_fifth_person_25_hashsim = (1 - (Simhash(generated_summaries[0]).distance(Simhash(group_summaries_25[4])) / 64)) * 100
 
 
-similarity_ratio_first_person_40_hashsim = 100 - Simhash(generated_summaries[1]).distance(Simhash(group_summaries_25[0]))
-similarity_ratio_second_person_40_hashsim = 100 - Simhash(generated_summaries[1]).distance(Simhash(group_summaries_25[1]))
-similarity_ratio_third_person_40_hashsim = 100 - Simhash(generated_summaries[1]).distance(Simhash(group_summaries_25[2]))
-similarity_ratio_forth_person_40_hashsim = 100 - Simhash(generated_summaries[1]).distance(Simhash(group_summaries_25[3]))
-similarity_ratio_fifth_person_40_hashsim = 100 - Simhash(generated_summaries[1]).distance(Simhash(group_summaries_25[4]))
+similarity_ratio_first_person_40_hashsim = (1 - (Simhash(generated_summaries[1]).distance(Simhash(group_summaries_40[0])) / 64)) * 100
+similarity_ratio_second_person_40_hashsim = (1 - (Simhash(generated_summaries[1]).distance(Simhash(group_summaries_40[1])) / 64)) * 100
+similarity_ratio_third_person_40_hashsim = (1 - (Simhash(generated_summaries[1]).distance(Simhash(group_summaries_40[2])) / 64)) * 100
+similarity_ratio_forth_person_40_hashsim = (1 - (Simhash(generated_summaries[1]).distance(Simhash(group_summaries_40[3])) / 64)) * 100
+similarity_ratio_fifth_person_40_hashsim = (1 - (Simhash(generated_summaries[1]).distance(Simhash(group_summaries_40[4])) / 64)) * 100
 
 
-similarity_ratio_first_person_60_hashsim = 100 - Simhash(generated_summaries[2]).distance(Simhash(group_summaries_25[0]))
-similarity_ratio_second_person_60_hashsim = 100 - Simhash(generated_summaries[2]).distance(Simhash(group_summaries_25[1]))
-similarity_ratio_third_person_60_hashsim = 100 - Simhash(generated_summaries[2]).distance(Simhash(group_summaries_25[2]))
-similarity_ratio_forth_person_60_hashsim = 100 - Simhash(generated_summaries[2]).distance(Simhash(group_summaries_25[3]))
-similarity_ratio_fifth_person_60_hashsim = 100 - Simhash(generated_summaries[2]).distance(Simhash(group_summaries_25[4]))
+similarity_ratio_first_person_60_hashsim = (1 - (Simhash(generated_summaries[2]).distance(Simhash(group_summaries_60[0])) / 64)) * 100
+similarity_ratio_second_person_60_hashsim = (1 - (Simhash(generated_summaries[2]).distance(Simhash(group_summaries_60[1])) / 64)) * 100
+similarity_ratio_third_person_60_hashsim = (1 - (Simhash(generated_summaries[2]).distance(Simhash(group_summaries_60[2])) / 64)) * 100
+similarity_ratio_forth_person_60_hashsim = (1 - (Simhash(generated_summaries[2]).distance(Simhash(group_summaries_60[3])) / 64)) * 100
+similarity_ratio_fifth_person_60_hashsim = (1 - (Simhash(generated_summaries[2]).distance(Simhash(group_summaries_60[4])) / 64)) * 100
 
 
 data_frame_summarization = pd.DataFrame.from_dict({
